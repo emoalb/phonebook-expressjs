@@ -1,0 +1,21 @@
+<form method="post">
+    <div class="form-group">
+        <label for="firstName">Search by First Name</label>
+        <input id="firstName" type="text" class="form-control" name="firstName">
+    </div>
+ <p><button type="submit" class="btn btn-primary">Search</button></p>
+</form>
+<table class="table">
+    {{#if hasSubmit}}
+        <h3>Search Results for {{result}}</h3>
+
+    <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Number</th>
+    </tr>
+    {{#each phones}}
+     {{>phone-contact}}
+    {{/each}}
+    {{/if}}
+</table>
